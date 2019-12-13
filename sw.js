@@ -28,5 +28,5 @@ workbox.precaching.cleanupOutdatedCaches()
 // --------------------------------------------------
 
 // Register route handlers for runtimeCaching
-workbox.routing.registerRoute(new RegExp('/<repository-name>/_nuxt/'), new workbox.strategies.CacheFirst ({}), 'GET')
-workbox.routing.registerRoute(new RegExp('/<repository-name>/'), new workbox.strategies.NetworkFirst ({}), 'GET')
+workbox.routing.registerRoute(new RegExp('/oneacre-2020/_nuxt/'), new workbox.strategies.CacheFirst ({}), 'GET')
+workbox.routing.registerRoute(new RegExp('/oneacre-2020/'), new workbox.strategies.NetworkFirst ({}), 'GET')
