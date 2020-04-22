@@ -1,8 +1,39 @@
 /*!
+    * tiptap v1.26.8
+    * (c) 2020 Scrumpy UG (limited liability)
+    * @license MIT
+    */
+
+/*!
+    * tiptap-commands v1.12.7
+    * (c) 2020 Scrumpy UG (limited liability)
+    * @license MIT
+    */
+
+/*!
+    * tiptap-extensions v1.28.8
+    * (c) 2020 Scrumpy UG (limited liability)
+    * @license MIT
+    */
+
+/*!
+    * tiptap-utils v1.8.4
+    * (c) 2020 Scrumpy UG (limited liability)
+    * @license MIT
+    */
+
+/*!
   * vue-router v3.1.6
   * (c) 2020 Evan You
   * @license MIT
   */
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
+ */
 
 /*!
  * Vue.js v2.6.11
@@ -21,6 +52,8 @@
  * (c) 2018-present egoist <0x142857@gmail.com>
  * Released under the MIT License.
  */
+
+/*! https://mths.be/utf8js v2.1.2 by @mathias */
 
 /**
  * @license
