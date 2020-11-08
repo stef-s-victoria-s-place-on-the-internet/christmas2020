@@ -162,11 +162,12 @@ export default {
 }
 </script>
 
-<style>
-body {
-  background-image: url('/images/lisa/msa_bg.svg');
+<style lang="scss">
+  /* background-image: url('/images/lisa/msa_bg.svg');
   background-size: 1500px;
-  background-repeat: repeat;
+  background-repeat: repeat; */
+body {
+  background-color: $bg-color;
 }
 
 .oa_payment_wrapper {
@@ -180,12 +181,12 @@ body {
   text-align: center;
   margin: 50px auto;
   color: #000;
-  background-color: white;
+  /* background-color: white; */
   position: relative;
 }
 
 .oa_payment_wrapper a {
-  color: #ff4713;
+  color: $primary;
   font-weight: bold;
 }
 
@@ -224,7 +225,7 @@ body {
   width: 50%;
   float: right;
   padding-left: 30px;
-  border-left: 1px solid #ff4713;
+  border-left: 1px solid $primary;
 }
 
 .oa_mid {
@@ -259,9 +260,9 @@ body {
 }
 
 .oa_p_content #oa_submit {
-  border: 1px solid #ff4713;
-  background-color: #ff4713;
-  color: #fff;
+  border: 1px solid $primary;
+  background-color: $primary;
+  color: $bg-color;
   height: 35px;
   cursor: pointer;
   -webkit-transition: 0.15s;
@@ -279,7 +280,7 @@ body {
 .horizontal_slider {
   margin: 20px 0 15px 0;
   background-color: #000;
-  color: #fff;
+  color: $bg-color;
   padding: 10px 0;
   width: 100%;
   outline: none;

@@ -1,7 +1,10 @@
 import Mode from 'frontmatter-markdown-loader/mode'
 import { markdownCustomCompiler } from './helpers/markdownCustomCompiler'
 
-const url = process.env.NODE_ENV === "development" ? 'http://localhost:8080' : 'http://oneacre.online'
+const url =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:8080'
+    : 'http://oneacre.online'
 
 const siteMeta = {
   title: 'oneacre.online',
@@ -86,7 +89,7 @@ export default {
   },
   // router
   router: {
-    middleware: ['authLink']
+    middleware: ['authLink'],
   },
   /*
    ** Customize the progress-bar color
@@ -116,7 +119,7 @@ export default {
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/sitemap-module
     // Note: always declare the sitemap module at end of array
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
   ],
 
   sitemap: {
@@ -133,7 +136,7 @@ export default {
   axios: {
     proxyHeaders: false,
     credentials: false,
-    baseURL: `${url}/api/v2`
+    baseURL: `${url}/api/v2`,
   },
   /*
    ** Build configuration

@@ -24,7 +24,7 @@
     <div class="oa_mobile_menu">
       <ul>
         <li>
-          <a href="/payment/karina">Purchase a copy</a>
+          <NuxtLink to="payment" append>Purchase a copy</NuxtLink>
         </li>
         <li class="oa_preserve">Newsletter</li>
       </ul>
@@ -44,9 +44,9 @@
       <!-- Buttons -->
       <div class="oa_buttons">
         <!-- Purchase -->
-        <a href="/payment/karina">
+        <NuxtLink to="payment" append>
           <div class="oa_button">Purchase a copy</div>
-        </a>
+        </NuxtLink>
         <!-- Newsletter -->
         <a href="" class="oa_preserve">
           <div class="oa_button">Newsletter</div>

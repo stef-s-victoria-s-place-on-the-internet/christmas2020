@@ -1,7 +1,5 @@
 <template>
-  <div>
     <Form :publication="artist.dir" :artist="artist" />
-  </div>
 </template>
 
 <script>
@@ -25,7 +23,17 @@ export default {
     return {
       title: this.title,
       meta: setMeta(this.title, this.description, this.image),
+      bodyAttrs: {
+        class: this.dir
+      }
     }
   },
 }
 </script>
+<style lang="scss">
+.karina {
+  --primary: #191919;
+  --bg-color: #d9d9d9;
+  --font-color: #191919;
+}
+</style>

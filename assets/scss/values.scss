@@ -3,8 +3,24 @@
 -------------------  */
 $white: #FFF;
 $grey: #D9D9D9;
+$gray: $grey;
 $black: #1A1A1A;
 $blue: #0033A1;
+
+:root {
+  --primary: #{$blue};
+  --secondary: #{$grey};
+  --bg-color: #{$white};
+  --font-color: #{$black};
+}
+
+
+$primary: var(--primary);
+$secondary: var(--secondary);
+$bg-color: var(--bg-color);
+$font-color: var(--font-color);
+
+
 /*  -------------------
     S I Z E S
 -------------------  */
