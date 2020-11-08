@@ -45,15 +45,6 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      payment_amount: 99,
-      name: 'test stef',
-      discountcode: undefined,
-      email: 'test@example.com',
-      exlibris: undefined,
-    }
-  },
   methods: {
     getPublicationId() {
       const { url } = _.values(this.customer.works).pop()
