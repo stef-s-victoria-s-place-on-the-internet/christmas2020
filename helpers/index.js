@@ -40,7 +40,6 @@ export const scrollPercentage = (selector) => {
   return clamp(percentage, 0, 100)
 }
 
-
 /**
  * @summary Format object with JSON.stringify
  * @name format
@@ -48,7 +47,7 @@ export const scrollPercentage = (selector) => {
  * @returns {Object} Formatted object
  * @author: Stef Kors
  */
-export const format = object => {
+export const format = (object) => {
   return JSON.stringify(object, null, 4)
 }
 
@@ -83,7 +82,13 @@ export const setMeta = (title, description, image) => {
       hid: 'description',
       name: 'description',
       content: description,
-    }
+    },
   ]
 }
 
+export const getRedirectPublicationPath = () => {
+  const location = window.location.pathname
+  const cleanPath = location.endsWith('/') ? location.slice(0, -1) : location
+  const pathname = cleanPath.split('/').slice(0, -1).join('/')
+  return `${pathname}/success`
+}

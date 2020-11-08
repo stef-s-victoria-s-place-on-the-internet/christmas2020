@@ -1,15 +1,15 @@
 <template>
   <div>
-    done!
+    <Success publication="lisa" />
   </div>
 </template>
 
 <script>
-import Form from "~/components/publications/S1/payment/form"
+import Success from "~/components/publications/S1/payment/success"
 
 export default {
   components: {
-    Form
+    Success
   }
 }
 </script>
