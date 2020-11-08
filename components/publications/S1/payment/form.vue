@@ -244,6 +244,7 @@ export default {
   font-size: 16px;
   color: $font-color;
   border: 1px solid $font-color;
+  background-color: $bg-color;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }

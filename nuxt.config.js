@@ -21,6 +21,7 @@ export default {
    */
   head: {
     title: siteMeta.title,
+    titleTemplate: '%s | oneacre.online',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
