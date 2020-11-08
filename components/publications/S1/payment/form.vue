@@ -116,6 +116,10 @@ export default {
       type: String,
       required: true,
     },
+    artist: {
+      type: Object,
+      required: true,
+    },
   },
   data() {
     return {
@@ -124,7 +128,7 @@ export default {
       discountcode: undefined,
       email: 'test@example.com',
       exlibris: undefined,
-      path: getRedirectPublicationPath()
+      path: getRedirectPublicationPath(),
     }
   },
   methods: {
@@ -139,7 +143,7 @@ export default {
         discountcode: this.discountcode,
       }
 
-      const redirect = await this.$axios.$post('/shop/submit', formData)
+      const redirect = await this.$axios.$post('/shop/catalog/submit', formData)
 
       // TODO: redirect to correct succes page from mollie
       // TODO: setup success endpoint

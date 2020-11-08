@@ -2757,12 +2757,13 @@
 </template>
 
 <script>
-import { setMeta } from '~/helpers'
+import { setMeta, publications } from '~/helpers'
+const { karina } = publications
 
 export default {
   data() {
     return {
-      title: 'artificial-intelligence-never-has-a-headache',
+      title: karina.title,
       description:
         'oneacre.online is an experimental publication project, of size exactly equal to the area of 1 chain by 1 furlong that aims to utilise the omnidirectional website space to seed works.',
       image: '/images/karina/oa_meta_img.jpg',

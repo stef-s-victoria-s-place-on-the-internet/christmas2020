@@ -5,10 +5,12 @@
       <span
         >You have completed your payment. <br /><br />
         We have sent email confirmation to:
-        <span class="emphasis">{{ email }}</span> with your personal link. Your
+        <span class="emphasis">{{ customer.email }}</span> with your personal link. Your
         personal link is:
         <span class="emphasis"
-          ><a :href="url">{{ url }}</a></span
+          >
+          <NuxtLink :to="getUrl(customer)">{{  getUrl(customer) }}</NuxtLink>
+          </span
         >. <br /><br />
         Please feel free to share your link with friends, family and the
         internet. Thank you for supporting
@@ -25,6 +27,7 @@
 </template>
 
 <script>
+import * as _ from 'lodash'
 import isUrl from 'is-url-superb'
 import { getRedirectPublicationPath } from '~/helpers'
 
@@ -32,6 +35,10 @@ export default {
   props: {
     publication: {
       type: String,
+      required: true,
+    },
+    customer: {
+      type: Object,
       required: true,
     },
   },
@@ -47,32 +54,10 @@ export default {
     }
   },
   methods: {
-    async checkForm() {
-      const formData = {
-        name: this.name,
-        email: this.email,
-        redirectUrl: this.path,
-        exlibris: this.exlibris,
-        payment_amount: this.payment_amount,
-        publication: this.publication,
-        discountcode: this.discountcode,
-      }
-
-      const redirect = await this.$axios.$post('/shop/submit', formData)
-
-      // TODO: redirect to correct succes page from mollie
-      // TODO: setup success endpoint
-      // TODO: styling for other publications
-      // TODO: replace mollie testing API key
-
-      // When we don't recieve an url we should
-      // handle the redirect ourselves
-      if (!isUrl(redirect)) {
-        return this.$router.push({ path: this.path, query: { id: redirect } })
-      }
-
-      window.location = redirect
-    },
+    getUrl(customer) {
+      const { url } = _.values(customer.works).pop()
+      return `/?id=${url}`
+    }
   },
 }
 </script>
