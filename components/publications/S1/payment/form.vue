@@ -174,7 +174,7 @@ export default {
   text-align: center;
   margin: 50px auto;
   color: $font-color;
-  background-color: white;
+  background-color: $bg-color;
   position: relative;
 }
 
@@ -293,7 +293,7 @@ export default {
   width: 100%;
   /* Specific width is required for Firefox. */
   background: transparent;
-  /* Otherwise white in Chrome */
+  /* Otherwise $bg-color in Chrome */
   outline: none;
 }
 
@@ -302,7 +302,7 @@ export default {
   border: 1px solid $font-color;
   height: 25px;
   width: 36px;
-  background: #ffffff;
+  background: $bg-color;
   border-radius: 0px;
   cursor: pointer;
   margin-top: -14px;
@@ -316,7 +316,7 @@ export default {
   height: 25px;
   width: 36px;
   border-radius: 0px;
-  background: #ffffff;
+  background: $bg-color;
   cursor: pointer;
   outline: none;
 }
@@ -327,7 +327,7 @@ export default {
   height: 25px;
   width: 36px;
   border-radius: 0px;
-  background: #ffffff;
+  background: $bg-color;
   cursor: pointer;
   outline: none;
 }

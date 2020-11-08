@@ -5,12 +5,12 @@
       <span
         >You have completed your payment. <br /><br />
         We have sent email confirmation to:
-        <span class="emphasis">{{ customer.email }}</span> with your personal link. Your
-        personal link is:
-        <span class="emphasis"
-          >
-          <a :href="getUrl(customer)">{{  getUrl(customer) }}</a>
-          </span
+        <span class="emphasis">{{ customer.email }}</span> with your personal
+        link. Your personal link is:
+        <span class="emphasis">
+          <NuxtLink :to="getUrl()">
+            {{ getUrl() }}
+          </NuxtLink> </span
         >. <br /><br />
         Please feel free to share your link with friends, family and the
         internet. Thank you for supporting
@@ -18,8 +18,7 @@
           ><a href="https:www.oneacre.online">oneacre.online</a></span
         >
         and
-        <span class="emphasis"
-          ><a href="https://yunlee.digital">Ingrid Eel</a></span
+        <span class="emphasis">{{ artist.name }}</span
         >.</span
       >
     </div>
@@ -29,7 +28,7 @@
 <script>
 import * as _ from 'lodash'
 import isUrl from 'is-url-superb'
-import { getRedirectPublicationPath } from '~/helpers'
+import { getPublicationRoute } from '~/helpers'
 
 export default {
   props: {
@@ -41,6 +40,10 @@ export default {
       type: Object,
       required: true,
     },
+    artist: {
+      type: Object,
+      required: true,
+    },
   },
   data() {
     return {
@@ -49,15 +52,25 @@ export default {
       discountcode: undefined,
       email: 'test@example.com',
       exlibris: undefined,
-      url: '/publication-url',
-      path: getRedirectPublicationPath(),
     }
   },
   methods: {
-    getUrl(customer) {
-      const { url } = _.values(customer.works).pop()
+    getPublicationId() {
+      const { url } = _.values(this.customer.works).pop()
       return `/?id=${url}`
-    }
+    },
+    getBaseUrl() {
+      return getPublicationRoute(this.publication)
+    },
+    getUrl(host = false) {
+      const url = this.getBaseUrl() + this.getPublicationId(this.customer)
+
+      if (host) {
+        return window.location.origin + url
+      }
+
+      return url
+    },
   },
 }
 </script>

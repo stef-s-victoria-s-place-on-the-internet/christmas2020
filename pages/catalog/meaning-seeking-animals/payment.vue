@@ -30,11 +30,13 @@ export default {
   },
 }
 </script>
+
 <style lang="scss">
 .lisa {
-  --primary: #191919;
-  --bg-color: #d9d9d9;
-  --font-color: #191919;
+  --primary: #ff4713;
+  --secondary: #fff;
+  --bg-color: #fff;
+  --font-color: #000;
 
   background-image: url("/images/lisa/msa_bg.svg");
   background-size: 1500px;
