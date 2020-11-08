@@ -57,14 +57,13 @@ export default {
   methods: {
     getPublicationId() {
       const { url } = _.values(this.customer.works).pop()
-      return `/?id=${url}`
+      return `?id=${url}`
     },
     getBaseUrl() {
       return getPublicationRoute(this.publication)
     },
     getUrl(host = false) {
       const url = this.getBaseUrl() + this.getPublicationId(this.customer)
-
       if (host) {
         return window.location.origin + url
       }
