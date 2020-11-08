@@ -47,10 +47,7 @@ export default {
 <style lang="scss">
 .karina {
   --primary: #191919;
-  --secondary: #d9d9d9;
-  --bg-color: #fff;
+  --bg-color: #d9d9d9;
   --font-color: #191919;
-
-  background-color: $secondary;
 }
 </style>

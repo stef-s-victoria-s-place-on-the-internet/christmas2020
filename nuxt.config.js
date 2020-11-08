@@ -106,12 +106,11 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  // Doc: https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
-  buildModules: ['@nuxtjs/style-resources'],
   /*
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/style-resources',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
@@ -125,7 +124,7 @@ export default {
   sitemap: {
     hostname: 'https://oneacre.online',
   },
-
+  // Doc: https://hackernoon.com/how-i-use-scss-variables-mixins-functions-globally-in-nuxt-js-projects-while-compiling-css-utilit-58bb6ff30438
   styleResources: {
     scss: ['assets/scss/main.scss'],
   },

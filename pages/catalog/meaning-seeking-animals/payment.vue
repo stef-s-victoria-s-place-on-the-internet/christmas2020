@@ -1,33 +1,20 @@
 <template>
-  <Confirmation :publication="artist.dir" :artist="artist" :customer="customer" />
+  <Form :publication="artist.dir" :artist="artist" />
 </template>
 
 <script>
-import Confirmation from '~/components/publications/S1/payment/confirmation'
+import Form from '~/components/publications/S1/payment/form'
 import { setMeta, publications } from '~/helpers'
-const { karina } = publications
+const { lisa } = publications
 
 export default {
   components: {
-    Confirmation,
-  },
-  async asyncData({ $axios, error, query }) {
-    try {
-      const customer = await $axios.$post('/shop/catalog/order-information', {
-        id: query.id,
-      })
-
-      return {
-        customer,
-      }
-    } catch (err) {
-      console.log(err)
-    }
+    Form,
   },
   data() {
     return {
-      ...karina,
-      artist: karina,
+      ...lisa,
+      artist: lisa,
       description:
         'oneacre.online is an experimental publication project, of size exactly equal to the area of 1 chain by 1 furlong that aims to utilise the omnidirectional website space to seed works.',
     }
@@ -43,14 +30,14 @@ export default {
   },
 }
 </script>
-
 <style lang="scss">
-.karina {
+.lisa {
   --primary: #191919;
-  --secondary: #d9d9d9;
-  --bg-color: #fff;
+  --bg-color: #d9d9d9;
   --font-color: #191919;
 
-  background-color: $secondary;
+  background-image: url("/images/lisa/msa_bg.svg");
+  background-size: 1500px;
+  background-repeat: repeat;
 }
 </style>

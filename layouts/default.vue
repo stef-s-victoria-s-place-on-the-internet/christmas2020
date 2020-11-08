@@ -3,7 +3,14 @@
 </template>
 
 <style lang="scss">
-@import '~/assets/scss/values.scss';
+@import './assets/scss/fonts.scss';
+
+:root {
+  --primary: #{$blue};
+  --secondary: #{$grey};
+  --bg-color: #{$white};
+  --font-color: #{$black};
+}
 
 * {
   box-sizing: border-box;
@@ -22,6 +29,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $bg-color;
 }
 
 h1,

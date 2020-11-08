@@ -162,26 +162,19 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  /* background-image: url('/images/lisa/msa_bg.svg');
-  background-size: 1500px;
-  background-repeat: repeat; */
-body {
-  background-color: $bg-color;
-}
-
+<style lang="scss" scoped>
 .oa_payment_wrapper {
   width: 100%;
   max-width: 800px;
-  border: 1px solid #000;
+  border: 1px solid $font-color;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 24px;
   font-family: 'NEXTBook-Regular', sans-serif;
   text-align: center;
   margin: 50px auto;
-  color: #000;
-  /* background-color: white; */
+  color: $font-color;
+  background-color: white;
   position: relative;
 }
 
@@ -192,7 +185,7 @@ body {
 
 .oa_p_label {
   padding: 15px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $font-color;
 }
 
 .oa_p_content {
@@ -249,8 +242,8 @@ body {
   font-family: 'Alverata-Regular', sans-serif;
   height: 30px;
   font-size: 16px;
-  color: #000;
-  border: 1px solid #000;
+  color: $font-color;
+  border: 1px solid $font-color;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -279,7 +272,7 @@ body {
 
 .horizontal_slider {
   margin: 20px 0 15px 0;
-  background-color: #000;
+  background-color: $font-color;
   color: $bg-color;
   padding: 10px 0;
   width: 100%;
@@ -306,7 +299,7 @@ body {
 
 .horizontal_slider[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 1px solid #000;
+  border: 1px solid $font-color;
   height: 25px;
   width: 36px;
   background: #ffffff;
@@ -319,7 +312,7 @@ body {
 
 /* All the same stuff for Firefox */
 .horizontal_slider[type='range']::-moz-range-thumb {
-  border: 1px solid #000;
+  border: 1px solid $font-color;
   height: 25px;
   width: 36px;
   border-radius: 0px;
@@ -330,7 +323,7 @@ body {
 
 /* All the same stuff for IE */
 .horizontal_slider[type='range']::-ms-thumb {
-  border: 1px solid #000;
+  border: 1px solid $font-color;
   height: 25px;
   width: 36px;
   border-radius: 0px;
@@ -348,7 +341,7 @@ body {
   width: 100%;
   height: 1px;
   cursor: pointer;
-  background: #000;
+  background: $font-color;
   outline: none;
 }
 
@@ -356,7 +349,7 @@ body {
   width: 100%;
   height: 1px;
   cursor: pointer;
-  background: #000;
+  background: $font-color;
   outline: none;
 }
 
