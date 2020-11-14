@@ -22,6 +22,8 @@
  * Released under the MIT License.
  */
 
+/*! https://mths.be/punycode v1.4.1 by @mathias */
+
 /**
   * vue-scroll vundefined
   * (c) 2019 Wang Pin
