@@ -82,36 +82,36 @@ export default {
         name: {
           label: 'Full Name',
           type: 'text',
-          value: '',
+          value: 'Stef Kors',
         },
         email: {
           label: 'Email',
           type: 'email',
-          value: '',
+          value: 'stef.kors@gmail.com',
         },
         address: {
           label: 'Address',
           type: 'text',
-          value: '',
+          value: 'Stille Veerkade',
         },
         number: {
           label: 'House number',
           type: 'text',
-          value: '',
+          value: '21B',
         },
         city: {
           label: 'City',
           type: 'text',
-          value: '',
+          value: 'Almere',
         },
         postalcode: {
           label: 'Postal Code',
           type: 'text',
-          value: '',
+          value: '1524NX',
         },
         country: {
           label: 'Country',
-          value: { iso: '', name: '' },
+          value: { iso: 'NL', name: 'Netherlands' },
           type: 'vue-select',
         },
       },
