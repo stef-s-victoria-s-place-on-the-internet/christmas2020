@@ -3,22 +3,60 @@
     <div class="editor" v-if="editor">
       <menu-bar class="editor__menu" :editor="editor" />
       <editor-content class="editor__content" :editor="editor" />
+      <div class="editor__bottom-bar">
+        <div :class="`editor__status editor__status--${status}`">
+          {{ status }}
+          <template v-if="status === 'connected'">
+            as {{ currentUser.name }},
+            {{ users.length }} user{{ users.length === 1 ? '' : 's' }} online
+          </template>
+        </div>
+        <div class="editor__actions">
+          <button @click="setName">
+            Set Name
+          </button>
+          <button @click="updateCurrentUser({ name: getRandomName() })">
+            Random Name
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="collaboration-users">
+      <div
+        class="collaboration-users__item"
+        :style="`background-color: ${otherUser.color}`"
+        v-for="otherUser in users"
+        :key="otherUser.clientId"
+      >
+        {{ otherUser.name }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import { Editor, EditorContent, defaultExtensions } from '@tiptap/vue-starter-kit'
+import Collaboration from '@tiptap/extension-collaboration'
+import CollaborationCursor from '@tiptap/extension-collaboration-cursor'
 import TaskList from '@tiptap/extension-task-list'
 import TaskItem from '@tiptap/extension-task-item'
 import Highlight from '@tiptap/extension-highlight'
+import * as Y from 'yjs'
+import { WebsocketProvider } from 'y-websocket'
+import { IndexeddbPersistence } from 'y-indexeddb'
 import MenuBar from './MenuBar.vue'
 
 const CustomTaskItem = TaskItem.extend({
   content: 'paragraph',
 })
 
+const getRandomElement = list => {
+  return list[Math.floor(Math.random() * list.length)]
+}
+
 export default {
+  props: ['document'],
   components: {
     EditorContent,
     MenuBar,
@@ -26,25 +64,86 @@ export default {
 
   data() {
     return {
+      currentUser: {
+        name: this.getRandomName(),
+        color: this.getRandomColor(),
+      },
+      indexdb: null,
       editor: null,
+      users: [],
+      status: 'connecting',
     }
   },
 
   mounted() {
-    const content = `<bold>new content</bold><bold>new content</bold><bold>this is me <bold>kwriting</bold></bold><bold>new content</bold><bold>new content</bold>`
+    const ydoc = new Y.Doc()
+    const provider = new WebsocketProvider('ws://localhost:8080/', this.document.title, ydoc)
+
+    provider.on('status', event => {
+      this.status = event.status
+    })
+
+    this.indexdb = new IndexeddbPersistence('oa-collaboration-example', ydoc)
 
     this.editor = new Editor({
-      content,
       extensions: [
         ...defaultExtensions().filter(extension => extension.config.name !== 'history'),
         Highlight,
         TaskList,
         CustomTaskItem,
+        Collaboration.configure({
+          provider,
+        }),
+        CollaborationCursor.configure({
+          provider,
+          user: this.currentUser,
+          onUpdate: users => {
+            this.users = users
+          },
+        }),
       ],
-      onUpdate() {
-        console.log(this.getJSON())
-      },
     })
+
+    localStorage.setItem('currentUser', JSON.stringify(this.currentUser))
+  },
+
+  methods: {
+    setName() {
+      const name = (window.prompt('Name') || '')
+        .trim()
+        .substring(0, 32)
+
+      if (name) {
+        return this.updateCurrentUser({
+          name,
+        })
+      }
+    },
+
+    updateCurrentUser(attributes) {
+      this.currentUser = { ...this.currentUser, ...attributes }
+      this.editor.chain().focus().user(this.currentUser).run()
+
+      localStorage.setItem('currentUser', JSON.stringify(this.currentUser))
+    },
+
+    getRandomColor() {
+      return getRandomElement([
+        '#A975FF',
+        '#FB5151',
+        '#FD9170',
+        '#FFCB6B',
+        '#68CEF8',
+        '#80CBC4',
+        '#9DEF8F',
+      ])
+    },
+
+    getRandomName() {
+      return getRandomElement([
+        'Lea Thompson', 'Cyndi Lauper', 'Tom Cruise', 'Madonna', 'Jerry Hall', 'Joan Collins', 'Winona Ryder', 'Christina Applegate', 'Alyssa Milano', 'Molly Ringwald', 'Ally Sheedy', 'Debbie Harry', 'Olivia Newton-John', 'Elton John', 'Michael J. Fox', 'Axl Rose', 'Emilio Estevez', 'Ralph Macchio', 'Rob Lowe', 'Jennifer Grey', 'Mickey Rourke', 'John Cusack', 'Matthew Broderick', 'Justine Bateman', 'Lisa Bonet',
+      ])
+    },
   },
 
   beforeDestroy() {

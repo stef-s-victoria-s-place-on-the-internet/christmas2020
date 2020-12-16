@@ -3,22 +3,37 @@
     <div class="editor" v-if="editor">
       <menu-bar class="editor__menu" :editor="editor" />
       <editor-content class="editor__content" :editor="editor" />
+      <div class="editor__bottom-bar">
+        <div :class="`editor__status editor__status--${status}`">
+          {{ status }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import { Editor, EditorContent, defaultExtensions } from '@tiptap/vue-starter-kit'
+import Collaboration from '@tiptap/extension-collaboration'
+import CollaborationCursor from '@tiptap/extension-collaboration-cursor'
 import TaskList from '@tiptap/extension-task-list'
 import TaskItem from '@tiptap/extension-task-item'
 import Highlight from '@tiptap/extension-highlight'
+import * as Y from 'yjs'
+import { WebsocketProvider } from 'y-websocket'
+import { IndexeddbPersistence } from 'y-indexeddb'
 import MenuBar from './MenuBar.vue'
 
 const CustomTaskItem = TaskItem.extend({
   content: 'paragraph',
 })
 
+const getRandomElement = list => {
+  return list[Math.floor(Math.random() * list.length)]
+}
+
 export default {
+  props: ['content', 'map'],
   components: {
     EditorContent,
     MenuBar,
@@ -26,25 +41,66 @@ export default {
 
   data() {
     return {
+      indexdb: null,
       editor: null,
+      status: 'connected'
     }
   },
 
   mounted() {
-    const content = `<bold>new content</bold><bold>new content</bold><bold>this is me <bold>kwriting</bold></bold><bold>new content</bold><bold>new content</bold>`
+    // get map from props because inside onUpdate "this" is the editor
+    const map = this.map
+    console.log('map', this.map)
+    // const content = this.content || '<p>init content</p>'
+
+    const ydoc = new Y.Doc()
+    const provider = new WebsocketProvider('ws://localhost:8080/', 'oa-collaboration-example', ydoc)
+    provider.on('status', event => {
+      this.status = event.status
+    })
+
+
+    this.indexdb = new IndexeddbPersistence('oa-collaboration-example', ydoc)
 
     this.editor = new Editor({
-      content,
+      // content,
       extensions: [
         ...defaultExtensions().filter(extension => extension.config.name !== 'history'),
         Highlight,
         TaskList,
         CustomTaskItem,
+        Collaboration.configure({
+          provider,
+        }),
+        CollaborationCursor.configure({
+          provider,
+          user: this.currentUser,
+          onUpdate: users => {
+            this.users = users
+          },
+        }),
       ],
       onUpdate() {
-        console.log(this.getJSON())
-      },
+        // map.set("content", this.getJSON());
+        // provider.send('getJSON')
+      }
     })
+
+    localStorage.setItem('currentUser', JSON.stringify(this.currentUser))
+  },
+
+  methods: {
+    setName() {
+      const name = (window.prompt('Name') || '')
+        .trim()
+        .substring(0, 32)
+
+      if (name) {
+        return this.updateCurrentUser({
+          name,
+        })
+      }
+    },
   },
 
   beforeDestroy() {
