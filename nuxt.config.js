@@ -18,6 +18,7 @@ const siteMeta = {
 export default {
   ssr: false,
   target: 'static',
+  components: true,
   /*
    ** Headers of the page
    */

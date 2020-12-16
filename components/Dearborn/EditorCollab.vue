@@ -1,42 +1,30 @@
 <template>
   <div>
     <div class="editor" v-if="editor">
-      <menu-bar class="editor__menu" :editor="editor" />
-      <editor-content class="editor__content" :editor="editor" />
+      <!-- <MenuBar class="editor__menu" :editor="editor" /> -->
+      <EditorContent class="editor__content" :editor="editor" />
+
       <div class="editor__bottom-bar">
         <div :class="`editor__status editor__status--${status}`">
           {{ status }}
           <template v-if="status === 'connected'">
-            as {{ currentUser.name }},
-            {{ users.length }} user{{ users.length === 1 ? '' : 's' }} online
+            as {{ currentUser.name }}, {{ users.length }} user{{
+              users.length === 1 ? '' : 's'
+            }}
+            online
           </template>
         </div>
-        <div class="editor__actions">
-          <button @click="setName">
-            Set Name
-          </button>
-          <button @click="updateCurrentUser({ name: getRandomName() })">
-            Random Name
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="collaboration-users">
-      <div
-        class="collaboration-users__item"
-        :style="`background-color: ${otherUser.color}`"
-        v-for="otherUser in users"
-        :key="otherUser.clientId"
-      >
-        {{ otherUser.name }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { Editor, EditorContent, defaultExtensions } from '@tiptap/vue-starter-kit'
+import {
+  Editor,
+  EditorContent,
+  defaultExtensions,
+} from '@tiptap/vue-starter-kit'
 import Collaboration from '@tiptap/extension-collaboration'
 import CollaborationCursor from '@tiptap/extension-collaboration-cursor'
 import TaskList from '@tiptap/extension-task-list'
@@ -46,16 +34,18 @@ import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
 import { IndexeddbPersistence } from 'y-indexeddb'
 import MenuBar from './MenuBar.vue'
+import deepEqual from 'deep-equal'
 
 const CustomTaskItem = TaskItem.extend({
   content: 'paragraph',
 })
 
-const getRandomElement = list => {
+const getRandomElement = (list) => {
   return list[Math.floor(Math.random() * list.length)]
 }
 
 export default {
+  middleware: 'auth',
   props: ['document'],
   components: {
     EditorContent,
@@ -64,8 +54,9 @@ export default {
 
   data() {
     return {
+      user: this.$store.state.auth.user,
       currentUser: {
-        name: this.getRandomName(),
+        name: this.$store.state.auth.user.name,
         color: this.getRandomColor(),
       },
       indexdb: null,
@@ -77,9 +68,13 @@ export default {
 
   mounted() {
     const ydoc = new Y.Doc()
-    const provider = new WebsocketProvider('ws://localhost:8080/', this.document.title, ydoc)
+    const provider = new WebsocketProvider(
+      'ws://localhost:8080/',
+      this.document.title,
+      ydoc
+    )
 
-    provider.on('status', event => {
+    provider.on('status', (event) => {
       this.status = event.status
     })
 
@@ -87,7 +82,9 @@ export default {
 
     this.editor = new Editor({
       extensions: [
-        ...defaultExtensions().filter(extension => extension.config.name !== 'history'),
+        ...defaultExtensions().filter(
+          (extension) => extension.config.name !== 'history'
+        ),
         Highlight,
         TaskList,
         CustomTaskItem,
@@ -97,8 +94,16 @@ export default {
         CollaborationCursor.configure({
           provider,
           user: this.currentUser,
-          onUpdate: users => {
-            this.users = users
+          onUpdate: (users) => {
+            // if users acutally changed
+            if (!deepEqual(users, this.users)) {
+              // dispatch update to the store
+              this.$store.commit('updateCollabUsers', {
+                title: this.document.title,
+                users,
+              })
+            }
+            this.users = this.$store.getters.getCollabUsers(this.document)
           },
         }),
       ],
@@ -109,9 +114,7 @@ export default {
 
   methods: {
     setName() {
-      const name = (window.prompt('Name') || '')
-        .trim()
-        .substring(0, 32)
+      const name = (window.prompt('Name') || '').trim().substring(0, 32)
 
       if (name) {
         return this.updateCurrentUser({
@@ -130,18 +133,42 @@ export default {
     getRandomColor() {
       return getRandomElement([
         '#A975FF',
-        '#FB5151',
-        '#FD9170',
-        '#FFCB6B',
-        '#68CEF8',
-        '#80CBC4',
-        '#9DEF8F',
+        // '#FB5151',
+        // '#FD9170',
+        // '#FFCB6B',
+        // '#68CEF8',
+        // '#80CBC4',
+        // '#9DEF8F',
       ])
     },
 
     getRandomName() {
       return getRandomElement([
-        'Lea Thompson', 'Cyndi Lauper', 'Tom Cruise', 'Madonna', 'Jerry Hall', 'Joan Collins', 'Winona Ryder', 'Christina Applegate', 'Alyssa Milano', 'Molly Ringwald', 'Ally Sheedy', 'Debbie Harry', 'Olivia Newton-John', 'Elton John', 'Michael J. Fox', 'Axl Rose', 'Emilio Estevez', 'Ralph Macchio', 'Rob Lowe', 'Jennifer Grey', 'Mickey Rourke', 'John Cusack', 'Matthew Broderick', 'Justine Bateman', 'Lisa Bonet',
+        'Lea Thompson',
+        'Cyndi Lauper',
+        'Tom Cruise',
+        'Madonna',
+        'Jerry Hall',
+        'Joan Collins',
+        'Winona Ryder',
+        'Christina Applegate',
+        'Alyssa Milano',
+        'Molly Ringwald',
+        'Ally Sheedy',
+        'Debbie Harry',
+        'Olivia Newton-John',
+        'Elton John',
+        'Michael J. Fox',
+        'Axl Rose',
+        'Emilio Estevez',
+        'Ralph Macchio',
+        'Rob Lowe',
+        'Jennifer Grey',
+        'Mickey Rourke',
+        'John Cusack',
+        'Matthew Broderick',
+        'Justine Bateman',
+        'Lisa Bonet',
       ])
     },
   },
@@ -156,9 +183,12 @@ export default {
 .editor {
   color: black;
   background-color: white;
-  border: 1px solid rgba(black, 0.1);
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0px 4px 4px 3px rgba(218, 218, 218, 0.25);
+  border-radius: 4px;
 
   &__menu {
     display: flex;
@@ -169,7 +199,7 @@ export default {
 
   &__content {
     padding: 1rem;
-    max-height: 30rem;
+    min-height: 30rem;
     overflow: auto;
 
     &::-webkit-scrollbar-thumb {
@@ -211,11 +241,11 @@ export default {
     }
 
     &--connecting::before {
-      background: #FD9170;
+      background: #fd9170;
     }
 
     &--connected::before {
-      background: #9DEF8F;
+      background: #9def8f;
     }
   }
 
@@ -323,8 +353,8 @@ export default {
   }
 
   pre {
-    background: #0D0D0D;
-    color: #FFF;
+    background: #0d0d0d;
+    color: #fff;
     font-family: 'JetBrainsMono', monospace;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
@@ -347,10 +377,10 @@ export default {
 
   blockquote {
     padding-left: 1rem;
-    border-left: 2px solid rgba(#0D0D0D, 0.1);
+    border-left: 2px solid rgba(#0d0d0d, 0.1);
   }
 
-  ul[data-type="taskList"] {
+  ul[data-type='taskList'] {
     list-style: none;
     padding: 0;
 

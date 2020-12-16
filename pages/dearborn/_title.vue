@@ -1,16 +1,14 @@
 <template>
   <div class="dearborn">
-    <EditorCollab :document="document" />
+    <div class="editorWrapper">
+      <EditorCollab :document="document" />
+      <References />
+    </div>
   </div>
 </template>
 
 <script>
-import EditorCollab from '~/components/Dearborn/EditorCollab'
-
 export default {
-  components: {
-    EditorCollab,
-  },
   async asyncData({$axios, params}) {
     try {
       const defaultDocument = {
@@ -30,6 +28,14 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.dearborn {
+  padding: 1rem;
 
+  .editorWrapper {
+    display: grid;
+    grid-template-columns: minmax(40ch, 100ch) minmax(20ch, 40ch);
+    gap: 1rem;
+  }
+}
 </style>
