@@ -28,11 +28,7 @@ export const mutations = {
 }
 
 export const getters = {
-  getCollabUsers: (state) => (document) => {
-    const {
-      title
-    } = document
-
+  getCollabUsers: (state) => (title) => {
     const storeDocument = _.get(state.dearborn.documents, [title])
 
     if (storeDocument) {

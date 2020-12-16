@@ -1,5 +1,10 @@
 <template>
   <div class="dearborn">
+    <div class="activeUsers">
+      <div class="user" v-for="user in users" :key="user.name">
+        {{ user.name }}
+      </div>
+    </div>
     <div class="editorWrapper">
       <EditorCollab :document="document" />
       <References />
@@ -19,11 +24,20 @@ export default {
 
 
       return {
-        document: document || defaultDocument
+        document: document || defaultDocument,
       }
     } catch (err) {
       console.error(err);
     }
+  },
+  data() {
+    return {
+      users: this.$store.getters.getCollabUsers(this.$route.params.title)
+    }
+  },
+  mounted() {
+    this.users = this.$store.getters.getCollabUsers(this.$route.params.title)
+    console.log('page users', this.users)
   }
 }
 </script>

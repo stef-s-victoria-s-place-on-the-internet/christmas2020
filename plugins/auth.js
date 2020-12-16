@@ -7,9 +7,9 @@ export default function({
     return
   }
 
-  if (!TEAM.includes($auth.user.email)) {
-    console.log('❌ user not authorized');
-    $auth.logout()
-    return
-  }
+  // if (!TEAM.includes($auth.user.email)) {
+  //   console.log('❌ user not authorized');
+  //   $auth.logout()
+  //   return
+  // }
 }

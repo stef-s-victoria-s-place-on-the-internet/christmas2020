@@ -103,7 +103,7 @@ export default {
                 users,
               })
             }
-            this.users = this.$store.getters.getCollabUsers(this.document)
+            this.users = this.$store.getters.getCollabUsers(this.document.title)
           },
         }),
       ],
