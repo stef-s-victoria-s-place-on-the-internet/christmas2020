@@ -8,7 +8,6 @@
 
 <script>
 import slugify from 'slugify'
-import Editor from '~/components/Dearborn/Editor'
 
 const options = {
   hour: 'numeric',
@@ -32,9 +31,6 @@ export default {
     return {
       url,
     }
-  },
-  components: {
-    Editor,
   },
 }
 </script>

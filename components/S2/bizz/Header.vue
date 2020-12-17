@@ -1,11 +1,6 @@
 <template>
 <div class="header">
-  <div class="profile">
-    <img :src="user.picture" alt="user profile" />
-    <div class="name">
-      {{ user.name }}
-    </div>
-  </div>
+  <Profile :user="user" name picture />
   <div class="logout">
     <div class="button" v-on:click.prevent="logout">Logout</div>
   </div>
@@ -36,19 +31,6 @@ export default {
     padding: 0.5rem 0;
     border-bottom: 1px solid $grey;
     @include subheader;
-
-    .profile {
-        display: grid;
-        grid-template-columns: 2.5rem 1fr;
-        align-items: center;
-        gap: 1rem;
-    }
-    img {
-        border-radius: 100%;
-        padding: 0.2rem;
-        border: 1px solid;
-        width: 100%;
-    }
 
     .button {
         color: rgba($black,0.4);

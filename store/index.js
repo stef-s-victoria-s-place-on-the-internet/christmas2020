@@ -11,7 +11,6 @@ export const state = () => ({
 
 export const mutations = {
   updateCollabUsers(state, {title, users}) {
-    console.log('users', _.uniqBy(users, 'name'));
     state.dearborn.documents = {
       ...state.dearborn.documents,
       [title]: {
