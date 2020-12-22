@@ -156,6 +156,8 @@ export default {
   border: 1px solid #e2e2e2;
   box-shadow: 0px 4px 4px 3px rgba(218, 218, 218, 0.25);
   border-radius: 4px;
+  min-height: 80vh;
+
 
   &__menu {
     display: flex;
