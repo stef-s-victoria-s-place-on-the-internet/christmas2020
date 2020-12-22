@@ -4,8 +4,9 @@
       <!-- <MenuBar class="editor__menu" :editor="editor" /> -->
       <EditorContent class="editor__content" :editor="editor" />
 
-      <div class="editor__bottom-bar">
-        342/100 words
+      <div class="editor__bottom-bar" v-if="characterCount || wordCount">
+        <div v-if="wordCount">{{ wordCount }} Words</div>
+        <div v-if="characterCount">{{ characterCount }} Characters</div>
       </div>
     </div>
   </div>
@@ -13,6 +14,7 @@
 
 <script>
 import * as Y from 'yjs'
+import * as _ from 'lodash'
 import { WebsocketProvider } from 'y-websocket'
 import { IndexeddbPersistence } from 'y-indexeddb'
 import deepEqual from 'deep-equal'
@@ -25,6 +27,8 @@ import Collaboration from '@tiptap/extension-collaboration'
 import CollaborationCursor from '@tiptap/extension-collaboration-cursor'
 import Highlight from '@tiptap/extension-highlight'
 import Focus from '@tiptap/extension-focus'
+import { htmlToText } from 'html-to-text'
+import wordCounter from 'words-count'
 
 import MenuBar from './MenuBar.vue'
 
@@ -51,6 +55,8 @@ export default {
       editor: null,
       users: [],
       status: 'connecting',
+      wordCount: 0,
+      characterCount: 0,
     }
   },
 
@@ -98,6 +104,15 @@ export default {
           },
         }),
       ],
+      onUpdate: () => {
+        const html = this.editor.getHTML()
+        const plain = htmlToText(html)
+        const words = wordCounter(plain)
+        this.characterCount = plain
+          .replace(/\n/g, '') // remove multi-lines
+          .replace(' ', '').length // remove spaces
+        this.wordCount = words
+      },
     })
   },
 
@@ -118,15 +133,7 @@ export default {
     },
 
     getRandomColor() {
-      return getRandomElement([
-        '#A975FF',
-        '#FB5151',
-        '#FD9170',
-        '#FFCB6B',
-        '#68CEF8',
-        '#80CBC4',
-        '#9DEF8F',
-      ])
+      return getRandomElement(['#A975FF', '#9DEF8F'])
     },
   },
 
@@ -138,7 +145,6 @@ export default {
 
 <style lang="scss">
 .has-focus {
-  background-color: $light-grey;
 }
 
 .editor {
@@ -170,12 +176,22 @@ export default {
   &__bottom-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
     white-space: nowrap;
-    padding: .5rem;
+    padding: 0.5rem;
     border-top: 1px solid rgba(black, 0.1);
     font-size: 0.8rem;
+
+    div {
+      border: 1px solid rgba(black, 0.1);
+
+      border-radius: 1rem;
+      padding: 0.1rem 0.5rem;
+
+      & + div {
+        margin-left: 1ch;
+      }
+    }
   }
 }
 
