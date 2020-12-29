@@ -1,6 +1,17 @@
 import Mode from 'frontmatter-markdown-loader/mode'
 import { markdownCustomCompiler } from './helpers/markdownCustomCompiler'
 
+
+
+const siteMeta = {
+  title: 'stef\'s and victoria\'s place on the internets',
+  description:
+    'stef\'s and victoria\'s place on the internets',
+  image: 'http://www.stefsandvictoriasplaceontheinternet.nl/social.png',
+}
+
+
+
 export default {
   ssr: false,
   target: 'static',
@@ -9,9 +20,57 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'home',
-    titleTemplate: 'stef\'s and victoria\'s place on the internets',
+    title: 'stef\'s and victoria\'s place on the internets',
   },
+  meta: [
+    {
+      charset: 'utf-8',
+    },
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1',
+    },
+    {
+      hid: 'og:title',
+      name: 'og:title',
+      content: siteMeta.title,
+    },
+    {
+      hid: 'og:image',
+      name: 'og:image',
+      content: siteMeta.image,
+    },
+    {
+      hid: 'twitter:title',
+      name: 'twitter:title',
+      content: siteMeta.title,
+    },
+    {
+      hid: 'twitter:card',
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+    {
+      hid: 'twitter:site',
+      name: 'twitter:site',
+      content: '@onacre.online',
+    },
+    {
+      hid: 'twitter:image',
+      name: 'twitter:image',
+      content: siteMeta.image,
+    },
+    {
+      hid: 'twitter:description',
+      name: 'twitter:description',
+      content: siteMeta.description,
+    },
+    {
+      hid: 'description',
+      name: 'description',
+      content: siteMeta.description,
+    },
+  ],
   generate: {
     fallback: true, // if you want to use '404.html' instead of the default '200.html'
     // fallback: 'my-fallback/file.html' // if your hosting needs a custom location
