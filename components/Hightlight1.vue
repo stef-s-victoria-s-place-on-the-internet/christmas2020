@@ -11,15 +11,33 @@
     "li5": "This homemade picture of a lighting strike ",
     "li6": "Getting a Nintendo Switch the day before the 2nd lockdown was announced.",
     "li7": "Transporting an actual TV from Greece to The Netherlands with no scratches ",
-    "li8": "Another year of keeping the ferns alive"
+    "li8": "Another year of keeping the ferns alive!"
   },
   "el": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "li1": "BBC 2 Quiz Night κάθε Δευτέρα",
+    "li2": "Αυτή η συνταγή για λαζάνια (click here)",
+    "li3": "Η Nemo ενδιαφέρθηκε πρόσφατα να φέρει την μπάλα",
+    "li4": "Καλλιτεχνική Συνεργασία με την Joke Kors. Συντελεστές Παραγωγής:",
+    "li4-1": "Σχεδιασμός & όλη  τη δουλεία: Joke Kors",
+    "li4-2": "Σχεδιασμός & ερασιτεχνική ραπτική : Βικτώρια Δούκα-Δουκοπούλου",
+    "li4-3": "Παραγωγός & καλλιτεχνικός διευθυντής & βοηθός quilter:: Stef Kors",
+    "li5": "Φωτογραφική Αποτύπωση Κεραυνού ",
+    "li6": "Αγορά ηλεκτρονικου παιχνιδιου Nintendo την ημέρα πριν από την ανακοίνωση του 2ου lockdown.",
+    "li7": "Μεταφορά τηλεόρασης από την Ελλάδα στην Ολλανδία χωρίς ούτε μια γρατζουνιά ",
+    "li8": "Ένα άλλο έτος που οι φτέρες επιβίωσαν!"
   },
   "nl": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "li1": "BBC 2 Maandag Quiz Nacht",
+    "li2": "Dit geweldige lasagne recept (klik hier)",
+    "li3": "Nemo recente interesse in het daadwerkelijk apporteren",
+    "li4": "Theemuts samenwerking door de tijd heen met Joke Kors. Credits als volgt:",
+    "li4-1": "quiltdesign & zoals bijna alle quilten: Joke Kors",
+    "li4-2": "theemuts ontwerp & amateur naaiwerk: Victoria Douka-Doukopoulou",
+    "li4-3": "producent & art director & assistent quilter: Stef Kors",
+    "li5": "Deze zelfgemaakte foto van een bliksem",
+    "li6": "Het krijgen van een Nintendo Switch de dag voor de 2e lockdown werd aangekondigd.",
+    "li7": "Een eigenlijke TV vervoeren van Griekenland naar Nederland zonder krassen ",
+    "li8": "Weer een jaar van het in leven houden van de varens!"
   }
 }
 </i18n>

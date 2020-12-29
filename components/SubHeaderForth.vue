@@ -1,15 +1,13 @@
 <i18n>
 {
   "en": {
-    "body": "stef,victoria, nemo & fiat sedici put forth "
+    "body": "Stef, Victoria, Nemo & Fiat Sedici put forth: "
   },
   "el": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "body": "Ο Στέφ, η Βικτώρια, η Nemo και το Fiat Sedici επιλέγουν:"
   },
   "nl": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "body": "Stef, Victoria, Nemo & Fiat Sedici naar voren brengen: "
   }
 }
 </i18n>

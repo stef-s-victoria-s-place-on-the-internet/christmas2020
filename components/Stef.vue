@@ -4,12 +4,10 @@
     "b1": "Stef has officially settled on his favorite tree, the beech tree. Although admittedly a tough decision, Stef’s really appreciates how leafy their leafs look, making the European beech tree #1 in Stef’s heart."
   },
   "el": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "b1": "Ο Στέφ αποφάσισε επίσημα πως το αγαπημένο του δέντρο είναι η οξιά. Αν και είναι ομολογουμένως μια δύσκολη απόφαση, ο Στέφ δεν μπόρεσε να παραβλέψει πως πιο φύλλο απ το φύλλο της οξιάς δεν έχει! άρα πως γίνεται κάποιο άλλο δέντρο να είναι το πιο αγαπημένο του ;!"
   },
   "nl": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "body": "Stef heeft zich officieel gevestigd op zijn favoriete boom, de beuk. Hoewel het een moeilijke beslissing is, waardeert Stef het echt hoe bladrijk hun bladeren eruit zien, waardoor de Europese beuk nummer 1 in Stef's hart is."
   }
 }
 </i18n>

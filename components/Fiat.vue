@@ -4,12 +4,10 @@
     "b5": "And 10-year old “Pending Nickname” Fiat Sedici, reliable transporter of dogs, humans & couches to near-by parks. As well as the disproportionally large Christmas tree that is currently taking over our living room. "
   },
   "el": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "b5": "Και το 10χρονο (χωρίς παρατσούκλι) Fiat Sedici, αξιόπιστο μεταφορέα σκύλων, ανθρώπων και καναπέδων σε κοντινά ή μακρινά πάρκα. Εποχιακά μεταφέρει και το δυσανάλογο μεγάλο χριστουγεννιάτικο δέντρο που καταλαμβάνει επί του παρόντος το σαλόνι μας. "
   },
   "nl": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "body": "En de 10 jaar oude \"Pending Nickname\" Fiat Sedici, betrouwbare transporteur van honden, mensen & banken naar nabijgelegen parken. Evenals de onevenredig grote kerstboom die op dit moment onze woonkamer overneemt."
   }
 }
 </i18n>

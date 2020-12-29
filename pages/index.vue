@@ -20,7 +20,7 @@
       <SubHeaderBork />
       <Ending />
     </main>
-    <p class="fin">made at home 🌳  by victoria & stef (nemo didn't help much)</p>
+    <Fin />
   </div>
 </template>
 
@@ -67,8 +67,5 @@ export default {
   font-size: 69px;
 }
 
-.fin {
-  text-align: center;
-  font-size: 1rem;
-}
+
 </style>

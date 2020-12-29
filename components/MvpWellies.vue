@@ -4,12 +4,10 @@
     "body": "This season’s shoutout goes out to wellies! By far the best purchase of the season, they always have your toes’ back, independently of wether you are hiking a mudpath or just walking to work!"
   },
   "el": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "body": "Ο MVP της χρονιάς είναι ξεκάθαρα οι γαλότσες! Με διαφορά η καλύτερη αγορά της σεζόν, συμφωνούν ομόφωνα πόδια, κάλτσες και αστράγαλοι! πλέον δεν βγαινεις απο το σπίτι χωρίς ένα ζευγάρι, ανεξάρτητα από το αν κάνεις πεζοπορία μέσα στη λάσπη ή απλά περπατάς στη δουλειά. Και το 2021 οτι βρεξει ας κατεβασει!"
   },
   "nl": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "body": "De pluim van dit seizoen gaat uit naar de regenlaarzen! Verreweg de beste aankoop van het seizoen, ze houden altijd je tenen droog, ongeacht of je een modderpad wandelt of gewoon naar je werk loopt!"
   }
 }
 </i18n>

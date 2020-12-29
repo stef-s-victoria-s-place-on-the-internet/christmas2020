@@ -7,12 +7,16 @@
     "cluster": "What a clusterfuck!"
   },
   "el": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "header": "2020",
+    "goals": "στόχοι",
+    "change": "περίπου τα ίδια",
+    "cluster": "τι στο διάολο!"
   },
   "nl": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "header": "2020",
+    "goals": "Goede Voornemens",
+    "change": "Er is niet veel veranderd",
+    "cluster": "Wat een bende!"
   }
 }
 </i18n>

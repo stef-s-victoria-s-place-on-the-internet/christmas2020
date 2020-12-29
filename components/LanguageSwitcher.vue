@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="wrapper">
-      <nuxt-link class="link" :to="switchLocalePath('en')">English</nuxt-link> //
-      <nuxt-link class="link" :to="switchLocalePath('nl')">Dutch</nuxt-link> //
-      <nuxt-link class="link" :to="switchLocalePath('el')">Greek</nuxt-link>
+<nuxt-link class="link" :to="switchLocalePath('el')">Ελληνικά</nuxt-link> //
+     <nuxt-link class="link" :to="switchLocalePath('en')">English</nuxt-link> //
+      <nuxt-link class="link" :to="switchLocalePath('nl')">Nederlands</nuxt-link>
     </div>
   </div>
 </template>

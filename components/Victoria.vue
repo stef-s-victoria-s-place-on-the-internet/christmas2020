@@ -4,12 +4,10 @@
     "b2": "Victoria graduated from an amateur bryologist to a birder during the quarantine. She doesn’t really want to talk to about it, but she feels comfortable disclosing that seedeaters [birds with long and narrow finches] lay closer to her heart than other form taxa."
   },
   "el": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "b2": "Η Βικτώρια αποφοίτησε από ερασιτέχνη βρυολόγο σε παρατηρητή πουλιών κατά τη διάρκεια της καραντίνας. Εάν και δεν είναι ακόμα έτοιμη να μιλήσει με λεπτομέρειες για το ποσό φυτό είναι τελικά , αισθάνεται άνετα να αποκαλύψει ότι οι σποροφάγοι [πουλιά με μακριά και στενά ράμφη] είναι τα πιο αγαπημένα της."
   },
   "nl": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "b2": "Victoria is tijdens de quarantaine gepromoveerd van amateur-bryoloog tot vogelaar. Ze wil er niet echt over praten, maar ze voelt zich wel op haar gemak als ze onthult dat zaadeters [vogels met lange en smalle vinken] dichter bij haar hart liggen dan andere vormen van taxa."
   }
 }
 </i18n>

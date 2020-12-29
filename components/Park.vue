@@ -4,12 +4,10 @@
     "body": "Backerhage as the Favorite Park of the Year. Home to excellent mudpools, a beautiful beech tree (loved by Stef and Dr. ten Cate whose honor placed it there) as well as excellent moss hills and spacious parking. All members of the household agree that ot is a joy to visit 2 to 4 times every week!"
   },
   "el": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "body": "Το πάρκο Backerhage ως το αγαπημένο πάρκο της χρονιάς! Το πάρκο που βρίσκεται στα περίχωρα της Χάγης, φιλοξενεί εξαιρετική λάσπη, ένα όμορφο δέντρο οξιάς (που το αγαπάει ο Στέφ και ο Δρ. Ten Cate, στη τιμή του οποίου το φυτέψανε), καθώς και εξαιρετικούς λόφους με βρύα και άνετο πάρκινγκ. Όλα τα μέλη του νοικοκυριού συμφωνούν ότι είναι ότι πρέπει για 2 έως 4 φορές την εβδομάδα!"
   },
   "nl": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "body": "Backerhage als het favoriete park van het jaar. Thuisbasis van uitstekende modderpoelen, een prachtige beuk (geliefd bij Stef en Dr. ten Cate wiens eer het daar heeft geplaatst) evenals uitstekende mosheuvels en ruime parkeergelegenheid. Alle leden van het huishouden zijn het erover eens dat het een plezier is om 2 tot 4 keer per week een bezoek te brengen!"
   }
 }
 </i18n>

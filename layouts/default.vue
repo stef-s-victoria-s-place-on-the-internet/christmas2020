@@ -39,7 +39,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Parisienne', cursive;
+  font-family: 'Fredoka One', cursive;
   font-size: 69px;
 }
 

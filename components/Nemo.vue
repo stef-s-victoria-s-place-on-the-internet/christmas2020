@@ -4,12 +4,10 @@
     "b4": "Nemo (Land Shark, Dutch Muddog) then nine-weeks now nine-months old Portuguese Waterdog, an occasionally ball fetcher with a soft spot for morning cuddles. Nemo has been been leading us in an exploration of the finest mud pools offered by The Hague and surrounding areas. And beta-testing all imaginable sleeping positions."
   },
   "el": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "b4": " Τη Nemo ( πότε ηπειρωτικός καρχαρίας πότε ολλανδέζικο λασποσκυλο) τότε εννέα εβδομάδων, τώρα, εννέα μηνών, Πορτογαλεζικο Νεροσκυλο, που περιστασιακά επιστρέφει τη μπάλα που παρακάλεσε να της ρίξεις. Η Nemo ηγειται την εξερεύνηση των καλύτερων λασπολάκων της Χάγη και γύρω περιοχών, καθώς και της πρωτοποριακές στάσεις ύπνου."
   },
   "nl": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
+    "b4": "Nemo (Landhaai, Haagse Modder Hond) dan negen weken nu negen maanden oude Portugese Waterdog, die af en toe een ball apporteert. Nemo heeft ons geleid in een verkenning van de mooiste modderpoelen die Den Haag en omstreken te bieden heeft. En beta-testen van alle denkbare slaapposities."
   }
 }
 </i18n>
