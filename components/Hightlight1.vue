@@ -1,7 +1,11 @@
 <i18n>
 {
   "en": {
-    "body": "This season’s shoutout goes out to wellies! By far the best purchase of the season, they always have your toes’ back, independently of wether you are hiking a mudpath or just walking to work!"
+    "li1": "BBC 2 Monday Quiz Nights",
+    "li2": "This killer lasagna recipe (click here)",
+    "li3": "Nemo recent interest in actually fetching",
+    "li4": "Tea Hat collaboration across time with Joke Kors. Credit as follow: quilt design & like practically all the quilting: Joke Kors teahat design & amateur sewing: Victoria Douka-Doukopoulou producer & art director & assistant quilter: Stef Kors",
+    "li5": "This homemade picture of a lighting strike "
   },
   "el": {
     "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
@@ -16,20 +20,37 @@
 
 <template>
   <div class="container">
-    <img
+    <!-- <img
       class="tag right"
       src="~/assets/images/christmas-2020/mvp-title.png"
       alt=""
-    />
+    /> -->
     <div class="wrapper">
       <div :class="active">
-        <p class="dropcap">{{ $t('body') }}</p>
-        <intersect @enter="setEnter()">
-          <div class="sidebyside">
-            <img src="~/assets/images/christmas-2020/2020-66.jpg" alt="" />
-            <img src="~/assets/images/christmas-2020/2020-35.jpg" alt="" />
+        <div class="list">
+          <div>
+            {{ $t('li1') }}
+            <!-- <img src="~/assets/images/christmas-2020/2020-11.jpg" alt="" /> -->
           </div>
-        </intersect>
+          <div>
+            <a
+              href="https://www.jamieoliver.com/recipes/pasta-recipes/jamie-s-classic-family-lasagne/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ $t('li2') }}
+              <!-- <img src="~/assets/images/christmas-2020/lasagja.webp" alt=""> -->
+            </a>
+          </div>
+          <div>{{ $t('li3') }}</div>
+          <div>
+            {{ $t('li4') }}
+            <img src="~/assets/images/christmas-2020/2020-16-2.jpg" alt="" />
+          </div>
+          <div>
+            {{ $t('li5') }}
+            <img src="~/assets/images/christmas-2020/2020-1.jpg" alt="" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -61,7 +82,7 @@ export default {
 .container {
   margin: 10rem auto;
 
-  max-width: 60ch;
+  max-width: 100ch;
   position: relative;
 }
 $tagWidth: 300;
@@ -85,7 +106,6 @@ $pos: $tagWidth / 2 + 0px;
   margin: 10rem auto; */
   position: relative;
   z-index: 20;
-  background: $black;
   display: block;
   padding: 2rem;
   /* border: 1px solid; */
@@ -111,6 +131,27 @@ $pos: $tagWidth / 2 + 0px;
   img {
     /* width: 100%; */
     margin-top: 2rem;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+
+    div {
+      list-style: none;
+      margin: 0;
+
+      &:nth-of-type(odd) {
+        padding-right: 2rem;
+        text-align: right;
+      }
+
+      &:nth-of-type(even) {
+        padding-left: 2rem;
+        text-align: left;
+      }
+    }
   }
 }
 

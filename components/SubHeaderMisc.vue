@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "body": "On some personal news :"
+    "body": "Miscellaneous Successes include:"
   },
   "el": {
     "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
@@ -30,6 +30,6 @@ h3 {
   text-align: center;
   width: 100%;
   background: $black;
-   padding: 2rem 0;
+  padding: 2rem 0;
 }
 </style>

@@ -1,7 +1,10 @@
 <i18n>
 {
   "en": {
-    "body": "Backerhage as the Favorite Park of the Year. Home to excellent mudpools, a beautiful beech tree (loved by Stef and Dr. ten Cate whose honor placed it there) as well as excellent moss hills and spacious parking. All members of the household agree that ot is a joy to visit 2 to 4 times every week!"
+    "li1": "Another year of keeping the ferns alive",
+    "li2": "Transporting an actual TV from Greece to The Netherlands with no scratches ",
+    "li3": "Getting a Nintendo Switch the day before the 2nd lockdown was announced.",
+    "li4": "Nemo would like to add :"
   },
   "el": {
     "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
@@ -16,21 +19,39 @@
 
 <template>
   <div class="container">
-    <img
-      class="tag left"
-      src="~/assets/images/christmas-2020/favorite-park-title.png"
+    <!-- <img
+      class="tag right"
+      src="~/assets/images/christmas-2020/mvp-title.png"
       alt=""
-    />
+    /> -->
     <div class="wrapper">
       <div :class="active">
-        <img src="~/assets/images/christmas-2020/2020-62.jpg" alt="" />
-        <p class="dropcap">{{ $t('body') }}</p>
-        <intersect @enter="setEnter()">
-          <div class="sidebyside">
-            <img src="~/assets/images/christmas-2020/2020-65.jpg" alt="" />
-            <img src="~/assets/images/christmas-2020/2020-63.jpg" alt="" />
+        <div class="list">
+          <div>{{ $t('li3') }}</div>
+          <div>
+            <a
+              href="https://www.jamieoliver.com/recipes/pasta-recipes/jamie-s-classic-family-lasagne/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ $t('li2') }}
+            </a>
           </div>
-        </intersect>
+          <div>
+            {{ $t('li1') }}
+            <img src="~/assets/images/christmas-2020/2020-7.jpg" alt="" />
+          </div>
+          <div>
+            {{ $t('li4') }}
+            <div id="borkWrapper">
+              <img
+                src="~/assets/images/christmas-2020/bork-bubble.png"
+                id="bork"
+                alt=""
+              />
+              <img src="~/assets/images/christmas-2020/2020-23.jpg" alt="" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -62,7 +83,7 @@ export default {
 .container {
   margin: 10rem auto;
 
-  max-width: 60ch;
+  max-width: 100ch;
   position: relative;
 }
 $tagWidth: 300;
@@ -80,13 +101,22 @@ $pos: $tagWidth / 2 + 0px;
     right: -$pos;
   }
 }
+#borkWrapper {
+  position: relative;
+  margin-top: 300px;
 
+  #bork {
+    position: absolute;
+    top: -300px;
+    right: -130px;
+    transform: rotate(20deg);
+  }
+}
 .wrapper {
   /* max-width: 60ch;
   margin: 10rem auto; */
   position: relative;
   z-index: 20;
-  background: $black;
   display: block;
   padding: 2rem;
   /* border: 1px solid; */
@@ -112,6 +142,27 @@ $pos: $tagWidth / 2 + 0px;
   img {
     /* width: 100%; */
     margin-top: 2rem;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+
+    div {
+      list-style: none;
+      margin: 0;
+
+      &:nth-of-type(odd) {
+        padding-right: 2rem;
+        text-align: right;
+      }
+
+      &:nth-of-type(even) {
+        padding-left: 2rem;
+        text-align: left;
+      }
+    }
   }
 }
 

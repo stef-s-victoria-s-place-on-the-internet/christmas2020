@@ -15,8 +15,11 @@
       <Fiat />
       <SubHeaderForth />
       <Park />
-      <SubHeaderHighlights />
+      <SubHeaderHighlight />
       <Hightlight1 />
+      <SubHeaderMisc />
+      <Hightlight2 />
+
       <!-- <Trees /> -->
       <!-- <Loader /> -->
       <!-- <p>

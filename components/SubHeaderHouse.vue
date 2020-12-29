@@ -30,5 +30,6 @@ h3 {
   text-align: center;
   width: 100%;
   background: $black;
+   padding: 2rem 0;
 }
 </style>
