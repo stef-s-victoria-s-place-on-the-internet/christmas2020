@@ -4,8 +4,14 @@
     "li1": "BBC 2 Monday Quiz Nights",
     "li2": "This killer lasagna recipe (click here)",
     "li3": "Nemo recent interest in actually fetching",
-    "li4": "Tea Hat collaboration across time with Joke Kors. Credit as follow: quilt design & like practically all the quilting: Joke Kors teahat design & amateur sewing: Victoria Douka-Doukopoulou producer & art director & assistant quilter: Stef Kors",
-    "li5": "This homemade picture of a lighting strike "
+    "li4": "Tea Hat collaboration across time with Joke Kors. Credits as follows:",
+    "li4-1": "quilt design & like practically all the quilting: Joke Kors",
+    "li4-2": "teahat design & amateur sewing: Victoria Douka-Doukopoulou",
+    "li4-3": "producer & art director & assistant quilter: Stef Kors",
+    "li5": "This homemade picture of a lighting strike ",
+    "li6": "Getting a Nintendo Switch the day before the 2nd lockdown was announced.",
+    "li7": "Transporting an actual TV from Greece to The Netherlands with no scratches ",
+    "li8": "Another year of keeping the ferns alive"
   },
   "el": {
     "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
@@ -20,17 +26,11 @@
 
 <template>
   <div class="container">
-    <!-- <img
-      class="tag right"
-      src="~/assets/images/christmas-2020/mvp-title.png"
-      alt=""
-    /> -->
     <div class="wrapper">
       <div :class="active">
         <div class="list">
           <div>
             {{ $t('li1') }}
-            <!-- <img src="~/assets/images/christmas-2020/2020-11.jpg" alt="" /> -->
           </div>
           <div>
             <a
@@ -38,17 +38,38 @@
               target="_blank"
               rel="noopener noreferrer"
               >{{ $t('li2') }}
-              <!-- <img src="~/assets/images/christmas-2020/lasagja.webp" alt=""> -->
             </a>
           </div>
           <div>{{ $t('li3') }}</div>
           <div>
             {{ $t('li4') }}
+            <span class="credits">
+              {{ $t('li4-1') }} <br />
+              {{ $t('li4-2') }} <br />
+              {{ $t('li4-3') }}
+            </span>
             <img src="~/assets/images/christmas-2020/2020-16-2.jpg" alt="" />
           </div>
           <div>
             {{ $t('li5') }}
             <img src="~/assets/images/christmas-2020/2020-1.jpg" alt="" />
+          </div>
+
+          <div>{{ $t('li6') }}
+            <img src="~/assets/images/christmas-2020/IMG_7110.JPG" alt="" />
+
+          </div>
+          <div>
+            <a
+              href="https://www.jamieoliver.com/recipes/pasta-recipes/jamie-s-classic-family-lasagne/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ $t('li7') }}
+            </a>
+          </div>
+          <div>
+            {{ $t('li8') }}
+            <img src="~/assets/images/christmas-2020/2020-7.jpg" alt="" />
           </div>
         </div>
       </div>
@@ -101,6 +122,11 @@ $pos: $tagWidth / 2 + 0px;
   }
 }
 
+.credits {
+  font-size: 1.2rem;
+  display: block;
+}
+
 .wrapper {
   /* max-width: 60ch;
   margin: 10rem auto; */
@@ -143,6 +169,10 @@ $pos: $tagWidth / 2 + 0px;
       margin: 0;
 
       &:nth-of-type(odd) {
+        margin-top: 10rem;
+
+        &:first-of-type {
+        }
         padding-right: 2rem;
         text-align: right;
       }

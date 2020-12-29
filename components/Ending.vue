@@ -1,37 +1,12 @@
-<i18n>
-{
-  "en": {
-    "b5": "And 10-year old “Pending Nickname” Fiat Sedici, reliable transporter of dogs, humans & couches to near-by parks. As well as the disproportionally large Christmas tree that is currently taking over our living room. "
-  },
-  "el": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
-  },
-  "nl": {
-    "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
-    "closing": "We hope 2021 treats us all better, because 2020 didn’t play nice at all."
-  }
-}
-</i18n>
-
 <template>
   <div class="container">
-    <img
-      class="tag left"
-      src="~/assets/images/christmas-2020/car-with-tree.png"
-      alt=""
-    />
-    <div class="wrapper">
-      <div :class="active">
-        <p class="dropcap">{{ $t('b5') }}</p>
-
-        <intersect @enter="setEnter()">
-          <img
-            src="~/assets/images/christmas-2020/car.jpeg"
-            alt=""
-          />
-        </intersect>
-      </div>
+    <div id="borkWrapper">
+      <img
+        src="~/assets/images/christmas-2020/bork-bubble.png"
+        id="bork"
+        alt=""
+      />
+      <img src="~/assets/images/christmas-2020/bork2.jpeg" alt="" />
     </div>
   </div>
 </template>
@@ -61,8 +36,9 @@ export default {
 <style lang="scss" scoped>
 .container {
   margin: 10rem auto;
+  margin-top: 300px;
 
-  max-width: 60ch;
+  max-width: 100ch;
   position: relative;
 }
 $tagWidth: 300;
@@ -80,9 +56,17 @@ $pos: $tagWidth / 2 + 0px;
     right: -$pos;
   }
 }
+#borkWrapper {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
 
-#spacing {
-  padding-bottom: 2rem;
+  #bork {
+    position: absolute;
+    top: -300px;
+    right: -130px;
+    transform: rotate(20deg);
+  }
 }
 
 .wrapper {
@@ -90,7 +74,6 @@ $pos: $tagWidth / 2 + 0px;
   margin: 10rem auto; */
   position: relative;
   z-index: 20;
-  background: $black;
   display: block;
   padding: 2rem;
   /* border: 1px solid; */
@@ -116,6 +99,27 @@ $pos: $tagWidth / 2 + 0px;
   img {
     /* width: 100%; */
     margin-top: 2rem;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+
+    div {
+      list-style: none;
+      margin: 0;
+
+      &:nth-of-type(odd) {
+        padding-right: 2rem;
+        text-align: right;
+      }
+
+      &:nth-of-type(even) {
+        padding-left: 2rem;
+        text-align: left;
+      }
+    }
   }
 }
 

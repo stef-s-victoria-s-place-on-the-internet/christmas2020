@@ -11,7 +11,7 @@
 <style lang="scss" scoped>
 .wrapper {
   text-align: center;
-  background-color: $black;
+  padding-top: 5rem;
   font-size: 1rem;
 }
 .link {

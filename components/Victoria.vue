@@ -15,13 +15,30 @@
 </i18n>
 
 <template>
-  <div class="wrapper">
+  <div class="container">
+        <img
+      class="tag left bottom"
+      src="~/assets/images/christmas-2020/bird-2.png"
+      alt=""
+    />
+    <img
+      class="tag left"
+      src="~/assets/images/christmas-2020/bird-3.png"
+      alt=""
+    />
+        <img
+      class="tag right"
+      src="~/assets/images/christmas-2020/bird-1.png"
+      alt=""
+    />
+    <div class="wrapper">
     <div :class="active">
-      <p>{{ $t('b2') }}</p>
+      <p class="dropcap">{{ $t('b2') }}</p>
       <intersect @enter="setEnter()">
-        <img src="~/assets/images/christmas-2020/2020-6.jpg" alt="" />
+        <img src="~/assets/images/christmas-2020/birbing.jpeg" alt="" />
       </intersect>
     </div>
+  </div>
   </div>
 </template>
 
@@ -48,19 +65,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-  max-width: 60ch;
-  margin: 10rem auto;
-  position: relative;
+.container {
+  margin: 20rem auto 10rem;
 
+  max-width: 60ch;
+  position: relative;
+}
+$tagWidth: 300;
+$pos: $tagWidth / 2 + 0px;
+.tag {
+  position: absolute;
+  top: -$pos;
+  width: $tagWidth + 0px;
+  z-index: 10;
+
+  &.left {
+    left: -$pos;
+  }
+  &.right {
+    right: -$pos;
+  }
+    &.bottom {
+    top: unset;
+    bottom: 0;
+  }
+}
+
+#spacing {
+  padding-bottom: 2rem;
+}
+
+.wrapper {
+  /* max-width: 60ch;
+  margin: 10rem auto; */
+  position: relative;
+  z-index: 20;
   background: $black;
   display: block;
   padding: 2rem;
   /* border: 1px solid; */
-
-  p {
-    margin-top: 2rem;
-  }
 
   .dropcap:first-letter {
     float: left;
@@ -81,7 +124,7 @@ export default {
   }
 
   img {
-    width: 100%;
+    /* width: 100%; */
     margin-top: 2rem;
   }
 }

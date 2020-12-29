@@ -16,17 +16,29 @@
 
 <template>
   <div class="container">
-  <div class="wrapper">
-    <div :class="active">
-      <p class="dropcap">{{ $t('b1') }}</p>
-      <intersect @enter="setEnter()">
-      <div class="sidebyside">
-        <img src="~/assets/images/christmas-2020/2020-34.jpg" alt="" />
-        <img src="~/assets/images/christmas-2020/2020-65.jpg" alt="" />
+    <img
+      id="garland-tree"
+      class="tag left"
+      src="~/assets/images/christmas-2020/garland-gi.png"
+      alt=""
+    />
+    <img
+      id="garland-tree"
+      class="tag right"
+      src="~/assets/images/christmas-2020/garland-gi.png"
+      alt=""
+    />
+    <div class="wrapper">
+      <div :class="active">
+        <p class="dropcap">{{ $t('b1') }}</p>
+        <intersect @enter="setEnter()">
+          <div class="sidebyside">
+            <img src="~/assets/images/christmas-2020/2020-34.jpg" alt="" />
+            <img src="~/assets/images/christmas-2020/2020-65.jpg" alt="" />
+          </div>
+        </intersect>
       </div>
-      </intersect>
     </div>
-  </div>
   </div>
 </template>
 
@@ -73,6 +85,11 @@ $pos: $tagWidth / 2 + 0px;
   &.right {
     right: -$pos;
   }
+}
+
+#garland-tree {
+  margin: 8rem 0 0 0;
+  transform: rotate(-45deg);
 }
 
 .wrapper {

@@ -1,5 +1,5 @@
 <template>
-  <img src="~/assets/images/christmas-2020/garaland-2.png" alt="" />
+  <img src="~/assets/images/christmas-2020/garland-1.png" alt="" />
 </template>
 
 <script>

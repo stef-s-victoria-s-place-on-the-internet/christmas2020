@@ -10,15 +10,7 @@ export default {
    */
   head: {
     title: 'home',
-    titleTemplate: '%s | stef\'s and victoria\'s place on the internets ',
-    script: [
-      {
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js'
-      },
-      {
-        src: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/GSDevTools3.min.js'
-      }
-    ]
+    titleTemplate: 'stef\'s and victoria\'s place on the internets',
   },
   generate: {
     fallback: true, // if you want to use '404.html' instead of the default '200.html'

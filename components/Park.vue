@@ -17,20 +17,24 @@
 <template>
   <div class="container">
     <img
-      class="tag left"
+      class="tag right"
       src="~/assets/images/christmas-2020/favorite-park-title.png"
       alt=""
     />
     <div class="wrapper">
       <div :class="active">
-        <img src="~/assets/images/christmas-2020/2020-62.jpg" alt="" />
-        <p class="dropcap">{{ $t('body') }}</p>
+        <img
+          id="spacing"
+          src="~/assets/images/christmas-2020/2020-62.jpg"
+          alt=""
+        />
         <intersect @enter="setEnter()">
+        <p class="dropcap">{{ $t('body') }}</p>
+        </intersect>
           <div class="sidebyside">
             <img src="~/assets/images/christmas-2020/2020-65.jpg" alt="" />
             <img src="~/assets/images/christmas-2020/2020-63.jpg" alt="" />
           </div>
-        </intersect>
       </div>
     </div>
   </div>
@@ -79,6 +83,10 @@ $pos: $tagWidth / 2 + 0px;
   &.right {
     right: -$pos;
   }
+}
+
+#spacing {
+  padding-bottom: 2rem;
 }
 
 .wrapper {

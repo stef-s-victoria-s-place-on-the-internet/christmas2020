@@ -17,6 +17,12 @@
 <template>
   <div class="container">
     <img
+    id="troph"
+      class="tag left"
+      src="~/assets/images/christmas-2020/throphy.png"
+      alt=""
+    />
+    <img
       class="tag right"
       src="~/assets/images/christmas-2020/mvp-title.png"
       alt=""
@@ -78,6 +84,11 @@ $pos: $tagWidth / 2 + 0px;
   &.right {
     right: -$pos;
   }
+}
+
+#troph {
+  transform: rotate(-30deg);
+  margin-left: -40px;
 }
 
 .wrapper {

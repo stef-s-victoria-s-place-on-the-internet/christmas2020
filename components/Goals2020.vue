@@ -2,6 +2,7 @@
 {
   "en": {
     "header": "2020",
+    "goals": "Goals",
     "change": "Not much has changed",
     "cluster": "What a clusterfuck!"
   },
@@ -19,16 +20,16 @@
 <template>
   <div class="wrapper">
     <div :class="active">
-      <h1>{{ $t('header') }}</h1>
+      <img src="~/assets/images/christmas-2020/2020-red.png" alt="" />
       <intersect @enter="setEnter()">
         <vue-typed-js
-          :strings="[$t('change'), $t('cluster')]"
+          :strings="[$t('goals'), $t('change'), $t('cluster')]"
           :loop="true"
           :typeSpeed="100"
           :backSpeed="60"
         >
           <h2>
-            <span>Goals: </span>
+            <span></span>
             <span class="typing"></span>
           </h2>
         </vue-typed-js>
@@ -59,9 +60,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  h2 {
-    font-size: 3rem;
-  }
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  width: 100%;
+  background: $black;
+  padding-top: 1rem;
+}
 
 .typing {
   min-height: 1rem;
@@ -72,7 +77,7 @@ export default {
   margin: 10rem auto;
   position: relative;
 
-  background: $black;
+  /* background: $black; */
   display: block;
   padding: 2rem;
   /* border: 1px solid; */
@@ -103,12 +108,12 @@ export default {
   width: 0;
   height: 0;
   background: transparent;
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
 }
-
+/*
 .geeks.active::before {
   animation: animate 1.5s linear forwards;
-}
+} */
 
 @keyframes animate {
   0% {
@@ -150,9 +155,9 @@ export default {
   border: 1px solid transparent;
 }
 
-.geeks.active::after {
+/* .geeks.active::after {
   animation: animates 1.5s linear forwards;
-}
+} */
 
 @keyframes animates {
   0% {

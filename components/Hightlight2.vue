@@ -1,9 +1,9 @@
 <i18n>
 {
   "en": {
-    "li1": "Another year of keeping the ferns alive",
-    "li2": "Transporting an actual TV from Greece to The Netherlands with no scratches ",
-    "li3": "Getting a Nintendo Switch the day before the 2nd lockdown was announced.",
+    "li8": "Another year of keeping the ferns alive",
+    "li7": "Transporting an actual TV from Greece to The Netherlands with no scratches ",
+    "li6": "Getting a Nintendo Switch the day before the 2nd lockdown was announced.",
     "li4": "Nemo would like to add :"
   },
   "el": {
@@ -39,17 +39,6 @@
           <div>
             {{ $t('li1') }}
             <img src="~/assets/images/christmas-2020/2020-7.jpg" alt="" />
-          </div>
-          <div>
-            {{ $t('li4') }}
-            <div id="borkWrapper">
-              <img
-                src="~/assets/images/christmas-2020/bork-bubble.png"
-                id="bork"
-                alt=""
-              />
-              <img src="~/assets/images/christmas-2020/2020-23.jpg" alt="" />
-            </div>
           </div>
         </div>
       </div>

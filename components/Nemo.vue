@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "b4": "(Land Shark, Dutch Muddog,) Nemo then nine-weeks now nine-months old Portuguese Waterdog, an occasionally ball fetcher with a soft spot for morning cuddles. Nemo has been been leading us in an exploration of the finest mud pools offered by The Hague and surrounding areas. And beta-testing all imaginable sleeping positions."
+    "b4": "Nemo (Land Shark, Dutch Muddog) then nine-weeks now nine-months old Portuguese Waterdog, an occasionally ball fetcher with a soft spot for morning cuddles. Nemo has been been leading us in an exploration of the finest mud pools offered by The Hague and surrounding areas. And beta-testing all imaginable sleeping positions."
   },
   "el": {
     "body": "A few days late  & few days early, we are sending this little card your way to wish you the warmest wishes we could come up with! May your hot chocolate never go cold on you and tight satisfying hugs from friends and loved soon be on their way!",
@@ -17,15 +17,17 @@
 <template>
   <div class="wrapper">
     <div :class="active">
-      <p>{{ $t('b4') }}</p>
+      <p class="dropcap">{{ $t('b4') }}</p>
       <intersect @enter="setEnter()">
         <div class="sidebyside">
-          <img src="~/assets/images/christmas-2020/2020-2.jpg" alt="" />
+          <img src="~/assets/images/christmas-2020/nemo1.jpeg" alt="" />
           <img src="~/assets/images/christmas-2020/2020-17.jpg" alt="" />
           <img src="~/assets/images/christmas-2020/2020-47.jpg" alt="" />
           <img src="~/assets/images/christmas-2020/2020-5.jpg" alt="" />
           <img src="~/assets/images/christmas-2020/2020-18.jpg" alt="" />
           <img src="~/assets/images/christmas-2020/2020-41.jpg" alt="" />
+          <img src="~/assets/images/christmas-2020/nemo2.jpeg" alt="" />
+          <img src="~/assets/images/christmas-2020/nemo3.jpeg" alt="" />
           <img src="~/assets/images/christmas-2020/2020-boop.gif" alt="" />
           <img src="~/assets/images/christmas-2020/2020-sleeping-snout.gif" alt="" />
         </div>

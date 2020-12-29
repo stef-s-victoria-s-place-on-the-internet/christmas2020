@@ -1,8 +1,7 @@
 <template>
   <div class="body">
-    <main class="home-wrapper">
-      <LanguageSwitcher />
       <Block1 />
+    <main class="home-wrapper">
       <Whishes />
       <Garland />
       <MvpWellies />
@@ -15,25 +14,13 @@
       <Fiat />
       <SubHeaderForth />
       <Park />
-      <SubHeaderHighlight />
-      <Hightlight1 />
+      <GarlandRed />
       <SubHeaderMisc />
-      <Hightlight2 />
-
-      <!-- <Trees /> -->
-      <!-- <Loader /> -->
-      <!-- <p>
-        Best whishes from our home to yours, all the best in the new year
-      </p>
-      <h1>2020</h1>
-      <h2>goals</h2>
-      <h2>not much changed, we don't go out much anyway</h2>
-      <h2>what a clusterfuck!</h2> -->
-
-      <!-- Picture of the red banner -->
-
-      <!-- <h2>2020  goals: not much has changed</h2> -->
+      <Hightlight1 />
+      <SubHeaderBork />
+      <Ending />
     </main>
+    <p class="fin">made at home 🌳  by victoria & stef (nemo didn't help much)</p>
   </div>
 </template>
 
@@ -52,6 +39,8 @@ export default {
   background: url('~assets/images/christmas-2020/background-small.png') repeat;
   background-size: 300px;
   background-color: $black;
+  padding: 0 2rem;
+  padding-bottom: 300px;
 }
 
 .home-wrapper {
@@ -76,5 +65,10 @@ export default {
 .parisienne {
   font-family: 'Parisienne', cursive;
   font-size: 69px;
+}
+
+.fin {
+  text-align: center;
+  font-size: 1rem;
 }
 </style>
