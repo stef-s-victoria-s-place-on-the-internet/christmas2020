@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "body": "This year our household welcomed:"
+    "body": "This year our household welcomed 2 new additions:"
   },
   "el": {
     "body": "Φέτος, το νοικοκυριό μας υποδέχτηκε :"

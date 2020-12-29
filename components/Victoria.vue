@@ -1,7 +1,7 @@
 <i18n>
 {
   "en": {
-    "b2": "Victoria graduated from an amateur bryologist to a birder during the quarantine. She doesn’t really want to talk to about it, but she feels comfortable disclosing that seedeaters [birds with long and narrow finches] lay closer to her heart than other form taxa."
+    "b2": "Victoria graduated from an amateur bryologist to a birder with a bird feeder during the quarantine. She doesn’t really want to talk to about it, but she feels comfortable disclosing that seedeaters [birds with long and narrow finches] lay closer to her heart than other birds."
   },
   "el": {
     "b2": "Η Βικτώρια αποφοίτησε από ερασιτέχνη βρυολόγο σε παρατηρητή πουλιών κατά τη διάρκεια της καραντίνας. Εάν και δεν είναι ακόμα έτοιμη να μιλήσει με λεπτομέρειες για το ποσό φυτό είναι τελικά , αισθάνεται άνετα να αποκαλύψει ότι οι σποροφάγοι [πουλιά με μακριά και στενά ράμφη] είναι τα πιο αγαπημένα της."
