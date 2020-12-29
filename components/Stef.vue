@@ -7,7 +7,7 @@
     "b1": "Ο Στέφ αποφάσισε επίσημα πως το αγαπημένο του δέντρο είναι η οξιά. Αν και είναι ομολογουμένως μια δύσκολη απόφαση, ο Στέφ δεν μπόρεσε να παραβλέψει πως πιο φύλλο απ το φύλλο της οξιάς δεν έχει! άρα πως γίνεται κάποιο άλλο δέντρο να είναι το πιο αγαπημένο του ;!"
   },
   "nl": {
-    "body": "Stef heeft zich officieel gevestigd op zijn favoriete boom, de beuk. Hoewel het een moeilijke beslissing is, waardeert Stef het echt hoe bladrijk hun bladeren eruit zien, waardoor de Europese beuk nummer 1 in Stef's hart is."
+    "b1": "Stef heeft zich officieel gevestigd op zijn favoriete boom, de beuk. Hoewel het een moeilijke beslissing is, waardeert Stef het echt hoe bladrijk hun bladeren eruit zien, waardoor de Europese beuk nummer 1 in Stef's hart is."
   }
 }
 </i18n>

@@ -7,7 +7,7 @@
     "b5": "Και το 10χρονο (χωρίς παρατσούκλι) Fiat Sedici, αξιόπιστο μεταφορέα σκύλων, ανθρώπων και καναπέδων σε κοντινά ή μακρινά πάρκα. Εποχιακά μεταφέρει και το δυσανάλογο μεγάλο χριστουγεννιάτικο δέντρο που καταλαμβάνει επί του παρόντος το σαλόνι μας. "
   },
   "nl": {
-    "body": "En de 10 jaar oude \"Pending Nickname\" Fiat Sedici, betrouwbare transporteur van honden, mensen & banken naar nabijgelegen parken. Evenals de onevenredig grote kerstboom die op dit moment onze woonkamer overneemt."
+    "b5": "En de 10 jaar oude \"Pending Nickname\" Fiat Sedici, betrouwbare transporteur van honden, mensen & banken naar nabijgelegen parken. Evenals de onevenredig grote kerstboom die op dit moment onze woonkamer overneemt."
   }
 }
 </i18n>

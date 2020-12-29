@@ -7,7 +7,7 @@
     "b1": "σπιτικός ιστότοπος 🌳 από την βικτώρια & τον στεφ (η nemo δεν έχει αντίχειρες)"
   },
   "nl": {
-    "body": "thuis gemaakt 🌳 door victoria & stef (nemo hielp niet veel)"
+    "b1": "thuis gemaakt 🌳 door victoria & stef (nemo hielp niet veel)"
   }
 }
 </i18n>
