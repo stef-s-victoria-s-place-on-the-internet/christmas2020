@@ -73,9 +73,9 @@
             <img src="~/assets/images/christmas-2020/2020-1.jpg" alt="" />
           </div>
 
-          <div>{{ $t('li6') }}
+          <div>
+            {{ $t('li6') }}
             <img src="~/assets/images/christmas-2020/IMG_7110.JPG" alt="" />
-
           </div>
           <div>
             <a
@@ -181,6 +181,10 @@ $pos: $tagWidth / 2 + 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
 
     div {
       list-style: none;
